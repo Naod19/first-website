@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="photos/logo/lock-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+        }
+        body::before{
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('photos/banner/banner-8.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.5;
+            z-index: -1;
+        }
+        .form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 1;
+    }
+      .form h2{
+        text-align: center;
+        margin: 20px 0;
+      }
+      .input-container{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+}
+        .input-container label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6b54b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s ease;
+            }
+        button:hover {
+            background-color: #523e8d;
+        }
+        .fa-home{
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+        .fa-home:hover {
+            color: #606060;
+            transform: scale(1.05);
+        }
+             @media screen and (max-width: 600px) {
+            .form {
+                width: 90%;
+                margin: 20px auto;
+            }
+            .input-container input {
+                width: 100%;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h2>Login <i class="fa fa-lock"></i></h2>
+        <form action="#">
+            <div class="input-container">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-container">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p style="text-align: center; margin-top: 10px;">Don't have an account? <a href="register.html">Register here</a></p>
+            <p style="text-align: center; margin-top: 10px;"><a href="index.html" style="text-decoration: underline; color: #000;"><i class="fa fa-home"></i>Back to Home</a></p>
+        </form>
+    </div>
+</body>
+</html>

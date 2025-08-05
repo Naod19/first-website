@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create An Ad</title>
+    <link rel="icon" href="photos/logo/ad.png" type="icon/imageX">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body { background: #f7f7fa; padding: 40px 0; }
+        .ad-form-container {
+            background: #fff;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 32px 28px;
+            border: 3px solid #222;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+        }
+        .ad-form-container h2 
+        { margin-bottom: 18px; color: #222; }
+        .ad-form-container label
+         { display: block; margin-bottom: 6px; font-weight: 500; color: #333; }
+        .ad-form-container input,
+        .ad-form-container textarea,
+        .ad-form-container select {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .ad-form-container input[type="file"] {
+            padding: 6px 0;
+            border: none;
+            margin-bottom: 18px;
+        }
+        .ad-form-container button {
+            background: #006ec1;
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .ad-form-container button:hover { background: #004e91; }
+        .currency-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        .currency-row select, .currency-row input {
+            margin-bottom: 0;
+        }
+        .converted-price {
+            font-size: 14px;
+            color: #006ec1;
+            margin-bottom: 18px;
+        }
+        .buyer-currency-row {
+            margin: 24px 0 0 0;
+            padding: 12px 0 0 0;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-form-container">
+        <form id="adForm">
+            <h2>Create Your Ad</h2>
+            <label for="ad-title">Ad Title*</label>
+            <input type="text" id="ad-title" name="ad-title" required>
+
+            <label for="ad-description">Description*</label>
+            <textarea id="ad-description" name="ad-description" rows="4" required></textarea>
+
+            <label>Price*</label>
+            <div class="currency-row">
+                <input type="number" id="ad-price" name="ad-price" min="0" required placeholder="Enter price">
+                <select id="ad-currency" name="ad-currency" required>
+                    <option value="USD">USD ($)</option>
+                    <option value="ETB">UGX</option>
+                    <option value="EUR">EUR (€)</option>
+                </select>
+            </div>
+            <div class="converted-price" id="convertedPrice"></div>
+
+            <label for="ad-category">Category*</label>
+            <select id="ad-category" name="ad-category" required>
+                <option value="">Select Category</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="home">Home & Kitchen</option>
+                <option value="accessories">Accessories</option>
+                <option value="cars">Cars</option>
+                <option value="others">Others</option>
+            </select>
+
+            <label for="ad-images">Upload Images*</label>
+            <input type="file" id="ad-images" name="ad-images" accept="image/*" multiple required>
+
+            <label for="ad-contact">Contact Number*</label>
+            <input type="tel" id="ad-contact" name="ad-contact" required pattern="[0-9+ ]{7,15}">
+             
+            <label for="ad-contact">Email*</label>
+            <input type="email" id="email-contact" name="email-contact" required>
+
+            <button type="submit">Post Ad</button>
+        </form>
+
+        <div class="buyer-currency-row">
+            <label for="buyer-currency">View price in:</label>
+            <select id="buyer-currency">
+                <option value="USD">USD ($)</option>
+                <option value="ETB">UGX</option>
+                <option value="EUR">EUR (€)</option>
+            </select>
+            <div class="converted-price" id="buyerConvertedPrice"></div>
+        </div>
+        <button type="button" id="previewBtn" style="margin-bottom:15px;background:#7165b7;">Preview</button>
+        <p><a href="index.html" style="justify-content: center; display: flex;">Go Back Home</a></p>
+</form>
+    
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
